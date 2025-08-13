@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { OtpInput } from "$lib/components";
+  import OtpInput from "$lib/components/OtpInput.svelte";
 
   // Demo states
   let otp1: string[] = [];
