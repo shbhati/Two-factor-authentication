@@ -182,3 +182,7 @@ button.lets-go span.wrong-otp {
     max-width: 96%;
   }
 }
+
+input#otp-2 {
+  margin-right: 5%;
+}
