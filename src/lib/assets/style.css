@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #e4f5ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.authenticatorCard {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 0px 0px 14px #cee0ea;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.authenticatorCard h1 {
+  margin: 0px 0px 10px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.authenticatorCard p {
+  margin: 0px 0px 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #b0b2b4;
+  font-weight: 300;
+}
+
+.authenticatorCard .code-inputs {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin: 20px 0px;
+}
+
+.authenticatorCard input {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  color: #28c2ff;
+  font-size: 30px;
+}
+
+.authenticatorCard input:focus-visible {
+  outline: 1px solid #28c2ff;
+}
+
+.authenticatorCard .icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: #e7f5ff;
+  padding: 20px;
+  border-radius: 101px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+b {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  margin: 20px 0px 0px;
+}
+
+.authenticatorCard .icon.success {
+  background: #dbffe7;
+  transition: 0.3s;
+}
+
+.authenticatorCard .icon:before {
+  position: absolute;
+  background: #e7f5ff;
+  width: 80px;
+  height: 80px;
+  content: "";
+  border-radius: 100%;
+  z-index: 9;
+}
+
+.icon.success:before {
+  animation: scaleUp 1s ease-in-out forwards;
+  background: #dbffe7;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.authenticatorCard .icon img {
+  max-width: 100%;
+  position: relative;
+  z-index: 99;
+}
+
+.authenticatorCard button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: #8c8e97;
+  background: #eceef1;
+  border-radius: 8px;
+  font-size: 15px;
+  position: relative;
+}
+
+button span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2196f3;
+  top: 0px;
+  right: -100%;
+  border-radius: 10px;
+  color: #fff;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+}
+
+button.lets-go span {
+  right: 0%;
+  transition: 0.5s ease-in-out;
+  opacity: 1;
+}
+
+
+button.lets-go span.wrong-otp {
+  background: #ff4c64;
+}
+
+.error-otp {
+  background: #ff4c6412;
+  outline: 1px solid #ff4c64;
+  color: #ff4c64 !important;
+}
+
+.error-otp:focus-visible {
+  outline: 1px solid #ff4c64;
+}
+
+
+
+.authenticatorCard .icon.wrong {
+  background: #f197a385;
+  transition: 0.3s;
+}
+
+.authenticatorCard .icon.wrong:before {
+  background: #f197a385;
+  animation: scaleUp 1s ease-in-out forwards;
+
+}
+
+@media (max-width: 639px) {
+  .authenticatorCard {
+    padding: 20px;
+    max-width: 96%;
+  }
+}
